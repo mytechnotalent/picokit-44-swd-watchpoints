@@ -1,0 +1,68 @@
+{
+  "repo": "picokit-44-swd-watchpoints",
+  "eyebrow": "PICOKIT // LESSON 44",
+  "title": "PICOKIT // SWD WATCHPOINTS",
+  "subtitle": "DEBUG PROBE DATA WATCHPOINT + STATUS CHANGE",
+  "accent": "#FF00BE",
+  "dim": "#9E0075",
+  "white": "#F3D2F5",
+  "cyan": "#7FD8E0",
+  "bg": "#11000D",
+  "bg_edge": "#050003",
+  "icon": "bug",
+  "panel_status": "WATCH live  ·  g_status 0 -> 1  ·  w=1",
+  "chips": [
+    {
+      "label": "NODE",
+      "value": "44"
+    },
+    {
+      "label": "WATCH",
+      "value": "g_status"
+    },
+    {
+      "label": "STATE",
+      "value": "0 -> 1"
+    },
+    {
+      "label": "RADIO",
+      "value": "-29 dBm"
+    }
+  ],
+  "terminal": [
+    "$ openocd -f interface/cmsis-dap.cfg -f target/rp2350.cfg",
+    "[*] node 00044  seq 2  HEARTBEAT  AEAD ok",
+    "[*] heartbeat body {\"n\":44,\"s\":2,\"w\":1}",
+    "[+] watch g_status  Hardware watchpoint 2",
+    "[+] Old value = 0  New value = 1  halt"
+  ],
+  "categories": [
+    "SWD",
+    "WATCH",
+    "STATUS",
+    "LINK"
+  ],
+  "cards": [
+    {
+      "tag": "WP-01",
+      "label": "variable",
+      "value": "g_status"
+    },
+    {
+      "tag": "WP-02",
+      "label": "old",
+      "value": "0"
+    },
+    {
+      "tag": "WP-03",
+      "label": "new",
+      "value": "1"
+    }
+  ],
+  "footer": [
+    "1 NODE  ·  1 GATEWAY  ·  2 WAY LORA  ·  NO PLAINTEXT",
+    "PICOKIT SERIES  ·  WATCH  ·  CHANGE  ·  RADIO  ==[ WATCH ]=="
+  ],
+  "layout": "stat",
+  "stat": "0 -> 1"
+}
